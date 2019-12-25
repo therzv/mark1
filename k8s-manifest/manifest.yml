@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mark1-deployment
+  labels:
+    track: canary
+spec:
+  selector:
+    matchLabels:
+      any-name: mark1
+  template:
+    metadata:
+      labels:
+        any-name: mark1
+    spec:
+      containers:
+      - name: mark1
+        image: rizvimmall/mark1:latest
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mark1-service
+spec:
+  ports:
+  - port: 80
+    targetPort: 8080
+  selector:
+    name: app
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: mark1-ingress
+spec:
+  rules:
+  - http:
+    paths:
+    - backend:
+        serviceName: mark1
+        servicePort: 80
+      path: /
