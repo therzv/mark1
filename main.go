@@ -11,5 +11,5 @@ func main() {
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Hello, Fuckers, We did it", r.URL.Path[1:])
+    fmt.Fprintf(w, "Dockerhub autobuild container test", r.URL.Path[1:])
 }

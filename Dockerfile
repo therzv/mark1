@@ -1,13 +1,14 @@
-# build stage
+# Build Stage
 FROM golang:alpine AS build-env
+MAINTAINER SRE  of SehatQ (sre@sehatq.com)
 RUN apk --no-cache add build-base git bzr mercurial gcc
-ADD . /app
-RUN cd /app && go build -o goapp
+ADD . /build
+RUN cd /build && go build -o mark1
 
-# final stage
+# Final Stage
 FROM alpine
 WORKDIR /app
-COPY --from=build-env /app/ /app/
-ENTRYPOINT ./goapp
+COPY --from=build-env /build/ /app/
+ENTRYPOINT ./mark1
 
 
