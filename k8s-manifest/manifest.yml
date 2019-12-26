@@ -2,21 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mark1
-  labels:
-    track: canary
   namespace: dev
 spec:
   selector:
     matchLabels:
-      any-name: mark1
+      app: mark1
   template:
     metadata:
       labels:
-        any-name: mark1
+        app: mark1
     spec:
       containers:
       - name: mark1
-        image: index.docker.io/rizvimmall/mark1:latest
+        image: rizvimmall/mark1:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
 ---
@@ -30,21 +29,19 @@ spec:
   - port: 8080
     targetPort: 8080
   selector:
-    name: mark1
-  type: NodePort  
+    app: mark1
+  type: NodePort
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   namespace: dev
-  annotations:
-    kubernetes.io/ingress.class: nginx
   name: mark1-ingress
 spec:
   rules:
-  - host: mark1.rizvicorp.com
-    http: 
+  - http:
       paths:
-      - backend:
+      - path: /
+        backend:
           serviceName: mark1
           servicePort: 8080
