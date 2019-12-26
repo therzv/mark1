@@ -26,7 +26,7 @@ metadata:
   namespace: dev
 spec:
   ports:
-  - port: 8080
+  - port: 31337
     targetPort: 8080
   selector:
     app: mark1
@@ -44,4 +44,4 @@ spec:
       - path: /
         backend:
           serviceName: mark1
-          servicePort: 8080
+          servicePort: 31337
