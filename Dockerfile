@@ -1,6 +1,6 @@
 # Build Stage
 FROM golang:alpine AS build-env
-MAINTAINER SRE  of SehatQ (sre@sehatq.com)
+MAINTAINER SRE of SehatQ (sre@sehatq.com)
 RUN apk --no-cache add build-base git bzr mercurial gcc
 ADD . /build
 RUN cd /build && go build -o mark1
@@ -9,6 +9,7 @@ RUN cd /build && go build -o mark1
 FROM alpine
 WORKDIR /app
 COPY --from=build-env /build/ /app/
+EXPOSE 8080
 ENTRYPOINT ./mark1
 
 
