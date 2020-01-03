@@ -11,5 +11,5 @@ func main() {
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Mark1 Endpoint Success", r.URL.Path[1:])
+    fmt.Fprintf(w, "Test Namespaces", r.URL.Path[1:])
 }
