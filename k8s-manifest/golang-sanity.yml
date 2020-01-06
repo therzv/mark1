@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mark1
+  namespace: sanity
+spec:
+  selector:
+    matchLabels:
+      app: mark1
+  template:
+    metadata:
+      labels:
+        app: mark1
+    spec:
+      containers:
+      - name: mark1
+        image: rizvimmall/mark1:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mark1
+  namespace: sanity
+  annotations:
+    getambassador.io/config: |
+      ---
+      apiVersion: ambassador/v0
+      kind:  Mapping
+      name:  mark1_mapping_sanity
+      prefix: /sanitygo/
+      rewrite: /sanitygo/
+      service: mark1.sanity:8080
+spec:
+  selector:
+    app: mark1
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+
+
