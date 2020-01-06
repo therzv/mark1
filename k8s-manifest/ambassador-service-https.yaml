@@ -19,8 +19,8 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - name: ambassador
+  - name: ambassador-https
     port: 443
-    targetPort: 80
+    targetPort: 8443
   selector:
     service: ambassador
