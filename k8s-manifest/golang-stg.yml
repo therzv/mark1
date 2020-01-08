@@ -31,7 +31,7 @@ metadata:
       kind:  Mapping
       name:  mark1_mapping_stg
       prefix: /stggo/
-      rewrite: /stggo/
+      rewrite: /stggo
       service: mark1.staging:8080
 spec:
   selector:

@@ -31,7 +31,7 @@ metadata:
       kind:  Mapping
       name:  mark1_mapping_sanity
       prefix: /sanitygo/
-      rewrite: /sanitygo/
+      rewrite: /sanitygo
       service: mark1.sanity:8080
 spec:
   selector:
