@@ -30,8 +30,8 @@ metadata:
       apiVersion: ambassador/v0
       kind:  Mapping
       name:  mark1_mapping
-      prefix: /devgo/
-      rewrite: /devgo/
+      prefix: /dev/go/
+      rewrite: /dev/go/
       service: mark1.development:8080
 spec:
   selector:
