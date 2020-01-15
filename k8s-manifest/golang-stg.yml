@@ -30,8 +30,8 @@ metadata:
       apiVersion: ambassador/v0
       kind:  Mapping
       name:  mark1_mapping_stg
-      prefix: /stggo/
-      rewrite: /stggo
+      prefix: /stg/go/
+      rewrite: /stg/go
       service: mark1.staging:8080
 spec:
   selector:

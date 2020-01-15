@@ -11,5 +11,5 @@ func main() {
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Branch Dev Build Test", r.URL.Path[1:])
+    fmt.Fprintf(w, "Branch Dev Build Test 1 - Spinnaker", r.URL.Path[1:])
 }

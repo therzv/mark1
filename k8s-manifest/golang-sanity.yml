@@ -30,8 +30,8 @@ metadata:
       apiVersion: ambassador/v0
       kind:  Mapping
       name:  mark1_mapping_sanity
-      prefix: /sanitygo/
-      rewrite: /sanitygo
+      prefix: /sanity/go/
+      rewrite: /sanity/go/
       service: mark1.sanity:8080
 spec:
   selector:
