@@ -18,6 +18,8 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+      imagePullSecrets:
+      - name: sehatqdockerkey
 ---
 apiVersion: v1
 kind: Service
@@ -29,9 +31,9 @@ metadata:
       ---
       apiVersion: ambassador/v0
       kind:  Mapping
-      name:  mark1_mapping_stg
+      name:  mark1_mapping
       prefix: /stg/go/
-      rewrite: /stg/go
+      rewrite: ""
       service: mark1.staging:8080
 spec:
   selector:
