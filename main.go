@@ -11,5 +11,5 @@ func main() {
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Auto Deploy Test 4", r.URL.Path[1:])
+    fmt.Fprintf(w, "Auto Deploy Test 5", r.URL.Path[1:])
 }
