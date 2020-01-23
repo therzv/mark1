@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: mark1
-        image: rizvimmall/mark1
+        image: index.docker.io/rizvimmall/mark1:1.1.5
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -31,9 +31,9 @@ metadata:
       ---
       apiVersion: ambassador/v0
       kind:  Mapping
-      name:  mark1_mapping
+      name:  mark1_mapping_sanity
       prefix: /dev/go/
-      rewrite: ""
+      rewrite: /dev/go/
       service: mark1.development:8080
 spec:
   selector:
