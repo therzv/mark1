@@ -11,5 +11,5 @@ func main() {
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Winter is Coming v2", r.URL.Path[1:])
+    fmt.Fprintf(w, "Winter is Coming v3", r.URL.Path[1:])
 }
