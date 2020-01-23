@@ -11,5 +11,5 @@ func main() {
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Auto Deploy Test 6 @orchid", r.URL.Path[1:])
+    fmt.Fprintf(w, "Winter is Coming or isnt ?", r.URL.Path[1:])
 }

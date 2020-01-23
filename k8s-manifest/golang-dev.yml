@@ -32,7 +32,7 @@ metadata:
       apiVersion: ambassador/v0
       kind:  Mapping
       name:  mark1_mapping
-      prefix: /dev6/go/
+      prefix: /dev7/go/
       rewrite: ""
       service: mark1.development:8080
 spec:
