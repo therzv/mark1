@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: mark1
-        image: rizvimmall/mark1:development
+        image: rizvimmall/mark1
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
