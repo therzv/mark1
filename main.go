@@ -11,5 +11,5 @@ func main() {
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Test 2 - Override Namespace", r.URL.Path[1:])
+    fmt.Fprintf(w, "Test 3 - Override Namespace", r.URL.Path[1:])
 }
