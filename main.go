@@ -11,5 +11,5 @@ func main() {
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Hello From Kubernetes, CI/CD to DEV and STG ", r.URL.Path[1:])
+    fmt.Fprintf(w, "Hello From Kubernetes, CI/CD to DEV and STG, Fuck Error", r.URL.Path[1:])
 }
