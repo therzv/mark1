@@ -11,5 +11,5 @@ func main() {
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Build Hash 2 Test", r.URL.Path[1:])
+    fmt.Fprintf(w, "Build Hash 3 Test", r.URL.Path[1:])
 }
