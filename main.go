@@ -11,5 +11,5 @@ func main() {
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Hello From Kubernetes", r.URL.Path[1:])
+    fmt.Fprintf(w, "SehatQ Kubernetes DevOps Team", r.URL.Path[1:])
 }
