@@ -11,5 +11,5 @@ func main() {
 }
 
 func HelloServer(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Build Hash 9 Test", r.URL.Path[1:])
+    fmt.Fprintf(w, "Test Push From Jenkins Pipeline - Mark 1", r.URL.Path[1:])
 }
